@@ -22,7 +22,7 @@ function App() {
   return (
     <>
       {getData && <div>{getData.first}</div>}
-      {postData && <div>{postData.second}</div>}
+      {postData && <div>{postData.first}</div>}
       <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
