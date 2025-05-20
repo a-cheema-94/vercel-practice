@@ -19,16 +19,16 @@ export const useFetch = (dataSent, endpoint) => {
       }
       options.headers = { "Content-Type": "application/json" }
       console.log(options)
-      // try {
-        // const res = await fetch(`http://localhost:5000${endpoint}`, options)
-        // const resJson = await res.json();
+      try {
+        const res = await fetch(`http://localhost:5000${endpoint}`, options)
+        const resJson = await res.json();
         setLoading(false)
-        setData({ first: 'hiii' })
+        setData(resJson)
         
-      // } catch (error) {
-      //   setLoading(false)
-      //   setError(true)
-      // }
+      } catch (error) {
+        setLoading(false)
+        setError(true)
+      }
 
     }
 
