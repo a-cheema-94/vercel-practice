@@ -17,12 +17,12 @@ app.use(express.json());
 const NASA_API_KEY = process.env.NASA_API_KEY;
 console.log(NASA_API_KEY)
 
-app.get("/api/haha", (req, res) => {
+app.get("api/haha", (req, res) => {
   console.log('hiii hahah')
   res.status(200).json({ first: 'get time' })
 })
 
-app.post("/api/foo", (req, res) => {
+app.post("api/foo", (req, res) => {
   // const { dataSent } = req.body
   console.log(req.body)
   console.log('hiii foo')
