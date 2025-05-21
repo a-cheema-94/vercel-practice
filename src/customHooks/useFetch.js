@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { URL } from '../config';
 
 export const useFetch = (dataSent, endpoint) => {
   const [isMounted, setIsMounted] = useState(true);
@@ -20,7 +21,7 @@ export const useFetch = (dataSent, endpoint) => {
       options.headers = { "Content-Type": "application/json" }
       console.log(options)
       try {
-        const res = await fetch(`http://localhost:5000${endpoint}`, options)
+        const res = await fetch(`${URL}/api${endpoint}`, options)
         const resJson = await res.json();
         setLoading(false)
         setData(resJson)
