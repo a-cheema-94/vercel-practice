@@ -5,7 +5,13 @@ require("dotenv").config();
 const PORT = process.env.PORT || 4444;
 
 const app = express();
-app.use(cors())
+app.use(cors({
+  origin: "*",
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization", "Accept", "X-Requested-With"],
+  preflightContinue: false,
+  optionsSuccessStatus: 204
+}));
 app.use(express.json());
 
 const NASA_API_KEY = process.env.NASA_API_KEY;
